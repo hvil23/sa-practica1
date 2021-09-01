@@ -24,8 +24,8 @@ pipeline {
         
         stage('deploy'){
             steps{
-                sh "echo subiendo a s3...."
-                withAWS(region:'us-east-1', credentials:'admin-s3') {
+                sh 'echo "subiendo a s3...."'
+                withAWS(region:'us-east-1', credentials:'s3') {
                     s3Upload(bucket:'sa-practica1', file:'src/index.html')
                 }                
             }
