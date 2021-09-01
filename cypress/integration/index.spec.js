@@ -12,7 +12,7 @@ describe('Pruebas de integracion de sa-practica1', () => {
       })
 
       it('1.2 Verifica texto en parrafo 1 y parrafo 2', () => {
-        cy.get('.container p').first().should('have.text', 'AMBIENTE: testing - Version: 1.0.0')
+        cy.get('.container p').first().should('have.text', 'AMBIENTE: testing - Version: 1.0.2')
         cy.get('.container p').last().should('have.text', 'A continuación te mostraré algunos datos sobre mí')
       })
     })
