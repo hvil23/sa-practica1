@@ -6,12 +6,16 @@ describe('Pruebas de integracion de sa-practica1', () => {
     })
 
 
-    it('1. Renderiza un elemento H1', () => {
-      cy.get('.container h1').should('have.length', 1)
-      cy.get('.container p').first().should('have.text', 'AMBIENTE: testing - Version: 1.0.0')
-      cy.get('.container p').last().should('have.text', 'A continuación te mostraré algunos datos sobre mí')
+    context('1. Verificando contenidos...', () => {
+      it('1.1 Renderiza un elemento H1', () => {
+        cy.get('.container h1').should('have.length', 1)
+      })
+
+      it('1.2 Verifica texto en parrafo 1 y parrafo 2', () => {
+        cy.get('.container p').first().should('have.text', 'AMBIENTE: testing - Version: 1.0.0')
+        cy.get('.container p').last().should('have.text', 'A continuación te mostraré algunos datos sobre mí')
+      })
     })
-  
   
     context('2. Accion click con boton saber mas de mi..', () => {
       /*
@@ -23,10 +27,8 @@ describe('Pruebas de integracion de sa-practica1', () => {
           .click()
       })
       */
-   
     })
 
-      
     context('3. Otras acciones', () => {
 
       it('Filtrar contenido inexistente', () => {
