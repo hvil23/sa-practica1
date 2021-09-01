@@ -24,10 +24,10 @@ pipeline {
         
         stage('deploy'){
             steps{
-                sh "node --version"
-                // withAWS(region:'us-east-1', credentials:'admin-s3') {
-                    // s3Upload(bucket:'sa-practica2', includePathPattern:'**/*')
-                // }                
+                sh "echo subiendo a s3...."
+                withAWS(region:'us-east-1', credentials:'admin-s3') {
+                    s3Upload(bucket:'sa-practica1', file:'src/index.html')
+                }                
             }
         }
     }
