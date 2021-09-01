@@ -8,9 +8,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                
                 sh 'npm --version'
-                sh "rm -rf *"
+                sh "rm -rf sa-practica1"
                 sh 'git clone https://github.com/hvil23/sa-practica1.git'
+                sh 'cd sa-practica1'
                 sh "npm cache clean --force "
                 sh "npm install"  
             }
@@ -18,12 +20,14 @@ pipeline {
         
         stage('test') {
             steps {
+                sh 'cd sa-practica1'
                 sh "npm test"
             }
         }
         
         stage('deploy'){
             steps{
+                sh 'cd sa-practica1'
                 sh 'echo "subiendo a s3...."'
                 withAWS(region: 'us-east-1', credentials: 'admin-s3') {
                     s3Upload(
