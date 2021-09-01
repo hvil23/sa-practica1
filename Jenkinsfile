@@ -31,10 +31,9 @@ pipeline {
         stage('deploy'){
             steps{
                 dir("sa-practica1"){
-                    pwd();
+                    echo 'Desplegando a S3'
                     withAWS(region:'us-east-1', credentials:'admin-s3') {
-                        def identity=awsIdentity(); //Log AWS credentials
-                        s3Upload(workingDir:'src', bucket:"sa-practica1", includePathPattern:'**/*')
+                        s3Upload(bucket:'sa-practica2', includePathPattern:'**/*')
                     }
                 };
             }
