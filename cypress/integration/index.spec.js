@@ -18,15 +18,15 @@ describe('Pruebas de integracion de sa-practica1', () => {
     })
   
     context('2. Accion click con boton saber mas de mi..', () => {
-      /*
+      
       beforeEach(() => {
 
         cy.contains('Presiona aquí para saber más de mí')
           .parent()
-          .find('input[type=button]')
+          .find('button')
           .click()
       })
-      */
+      
     })
 
     context('3. Otras acciones', () => {
