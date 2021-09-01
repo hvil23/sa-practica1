@@ -19,12 +19,8 @@ describe('Pruebas de integracion de sa-practica1', () => {
   
     context('2. Accion click con boton saber mas de mi..', () => {
       
-      beforeEach(() => {
-
-        cy.contains('Presiona aquí para saber más de mí')
-          .parent()
-          .find('button')
-          .click()
+      it('2.1 Click al boton 1 vez', () => {
+        cy.get('button').contains('Mas info').click();
       })
       
     })
