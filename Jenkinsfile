@@ -13,6 +13,7 @@ pipeline {
                 sh "rm -rf sa-practica1"
                 sh 'git clone https://github.com/hvil23/sa-practica1.git'
                 sh 'cd sa-practica1'
+                sh 'git checkout testing'
                 sh "npm cache clean --force "
                 sh "npm install"  
             }
