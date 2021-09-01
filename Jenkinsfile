@@ -29,8 +29,7 @@ pipeline {
                     s3Upload(
                         bucket: 'sa-practica1', 
                         file: "index.html",
-                        path: "src", // no trailing slash                         
-                        workingDir: "./"
+                        path: "src/" // no trailing slash                         
                     )
                 }                
             }
