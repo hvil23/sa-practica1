@@ -18,7 +18,6 @@ pipeline {
         
         stage('test') {
             steps {
-                sh "cd src"
                 sh "npm test"
             }
         }
