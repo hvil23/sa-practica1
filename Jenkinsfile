@@ -37,7 +37,7 @@ pipeline {
         stage('integration') {
             steps {
                 sh 'echo "4. INTEGRACION CONTINUA (Realizando pruebas punto a punto...)"'
-                sh "npm run cypress:open"
+                sh "npx cypress run"
             }
         }
     }
