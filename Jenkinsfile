@@ -34,7 +34,8 @@ pipeline {
                     s3Upload(
                         bucket: 'sa-practica1', 
                         file: "sa-practica1/src/index.html",
-                        path: "testing/" // no trailing slash                         
+                        path: "testing/", // no trailing slash                       
+                        acl: "PublicRead"
                     )
                 }                
             }
