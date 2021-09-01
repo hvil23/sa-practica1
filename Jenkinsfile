@@ -23,7 +23,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'echo "2. PRUEBAS (Realizando pruebas unitarias...)"'
-                sh 'cd sa-practica1'
+                // sh 'cd sa-practica1'
                 sh 'git checkout testing'
                 sh "npm test"
             }
@@ -32,7 +32,7 @@ pipeline {
         stage('deploy'){
             steps{
                 sh 'echo "3. DESPLIEGUE (Subiendo pagina rama testing a S3...)"'
-                sh 'cd sa-practica1'   
+                // sh 'cd sa-practica1'   
                 sh 'git checkout testing'             
                 withAWS(region: 'us-east-1', credentials: 'admin-s3') {
                     s3Upload(
