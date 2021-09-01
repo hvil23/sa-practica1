@@ -26,11 +26,11 @@ describe('index.html', () => {
 
   it('Renderiza un botón', () => {
     expect(container.querySelector('button')).not.toBeNull()
-    expect(getByText(container, 'Presiona aquí para saber más de mí')).toBeInTheDocument()
+    expect(getByText(container, 'Mas info')).toBeInTheDocument()
   })
 
   it('Renderiza una nueva frase via JavaScript cuando el botón es presionado', async () => {
-    const button = getByText(container, 'Presiona aquí para saber más de mí')
+    const button = getByText(container, 'Mas info')
     
     fireEvent.click(button)
     let generatedParagraphs = container.querySelectorAll('#phrase-container p')
