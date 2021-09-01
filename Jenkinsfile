@@ -9,8 +9,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "1. GENERACION (Borrando contenido anterior, clonando repositorio, instalando dependecias...)"'
-                sh 'npm --version'
-                sh "rm -rf sa-practica1"
+                // sh 'npm --version'
+                // sh "rm -rf sa-practica1"
                 // sh 'git clone https://github.com/hvil23/sa-practica1.git'
                 // sh 'cd sa-practica1'
                 // sh "npm cache clean --force "
