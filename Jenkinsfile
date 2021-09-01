@@ -28,13 +28,13 @@ pipeline {
         
         stage('deploy'){
             steps{
-                sh 'echo "3. DESPLIEGUE (Subiendo pagina rama master a S3...)"'
+                sh 'echo "3. DESPLIEGUE (Subiendo pagina rama testing a S3...)"'
                 sh 'cd sa-practica1'                
                 withAWS(region: 'us-east-1', credentials: 'admin-s3') {
                     s3Upload(
                         bucket: 'sa-practica1', 
                         file: "sa-practica1/src/index.html",
-                        path: "master/" // no trailing slash                         
+                        path: "testing/" // no trailing slash                         
                     )
                 }                
             }
