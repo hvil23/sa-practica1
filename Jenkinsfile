@@ -32,9 +32,9 @@ pipeline {
             steps{
                 dir("sa-practica1"){
                     echo 'Desplegando a S3'
-                    withAWS(region:'us-east-1', credentials:'admin-s3') {
-                        s3Upload(bucket:'sa-practica2', includePathPattern:'**/*')
-                    }
+                    // withAWS(region:'us-east-1', credentials:'admin-s3') {
+                        // s3Upload(bucket:'sa-practica2', includePathPattern:'**/*')
+                    // }
                 };
             }
         }
