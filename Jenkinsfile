@@ -30,7 +30,7 @@ pipeline {
         
         stage('deploy'){
             steps{
-                withAWS(region:'us-east-1', credentials: 's3') {
+                withAWS(region:'us-east-1', credentials: 'admin-s3') {
                     s3Upload(bucket: 'sa-practica1', file: 'sa-practica1/src/index.html')
                 }
             }
